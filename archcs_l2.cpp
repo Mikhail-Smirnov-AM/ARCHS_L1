@@ -1,3 +1,7 @@
+// Лабораторная работа №2A "Ввод-вывод при помощи libc"
+// Работа выполнена командой #5 группы ПМ-31 Волковым Егором Юрьевичем и Смирновым Михаилом Алексеевичем
+// Данный модуль содержит решения всех пяти заданий ЛР2А, функции, необходимые для решения каждого задания, выделены комментариями в отдельные озаглавленные блоки
+
 #include <iostream>
 #include <cmath>
 
@@ -7,7 +11,7 @@
 using namespace std;
 
 /////////////////////////////////////////
-//���� �������, ��������� ���������� �������� �� �����
+//Блок функций, выводящих содержимое массивов на экран
 template <class T>
 void print(T M[N], int wide)
 {
@@ -39,7 +43,7 @@ void print(double M[N], int wide)
 /////////////////////////////////////////
 
 /////////////////////////////////////////
-// ������� �2�.1 ������� 5
+// Задание Л2А.1 Вариант 5
 void task1(unsigned char Mb[N],unsigned short Ms[N],unsigned int Ml[N],unsigned long long Mq[N],float Mfs[N],double Mfl[N])
 {
     print(Mb,2*sizeof(char));
@@ -54,7 +58,7 @@ void task1(unsigned char Mb[N],unsigned short Ms[N],unsigned int Ml[N],unsigned 
 /////////////////////////////////////////
 
 /////////////////////////////////////////
-// ������� ��������� i-�� �������� �������
+// функции изменения i-го элемента массива
 template<class T>
 void change_arr(T A[],long long int i)
 {
@@ -109,7 +113,7 @@ void change_arr(double A[],long long int i)
 /////////////////////////////////////////
 
 /////////////////////////////////////////
-// �2�.�2
+// Задание Л2А.2 Вариант 5
 void task2(unsigned char Mb[N],unsigned short Ms[N],unsigned int Ml[N],unsigned long long Mq[N],float Mfs[N],double Mfl[N])
 {
     change_arr(Mb,2);
@@ -124,7 +128,7 @@ void task2(unsigned char Mb[N],unsigned short Ms[N],unsigned int Ml[N],unsigned 
 /////////////////////////////////////////
 
 /////////////////////////////////////////
-// ������� �2�.3 ������� 5
+// Задание Л2А.3 Вариант 5
 void change_whole_arr(double Mfl[N])
 {
     double new_number;
@@ -151,7 +155,7 @@ void task3(unsigned char Mb[N],unsigned short Ms[N],unsigned int Ml[N],unsigned 
 
 
 /////////////////////////////////////////
-// ������� �2�.4 ������� 5
+// Задание Л2А.4 Вариант 5
 void task4()
 {
     char s1[10];
@@ -172,7 +176,7 @@ void task4()
 /////////////////////////////////////////
 
 /////////////////////////////////////////
-// ������� �2�.5 ������� 5
+// Задание Л2А.5 Вариант 5
 void task5(unsigned char Mb[N],unsigned short Ms[N],unsigned int Ml[N],unsigned long long Mq[N],float Mfs[N],double Mfl[N])
 {
     int k = 30;
@@ -188,7 +192,7 @@ void task5(unsigned char Mb[N],unsigned short Ms[N],unsigned int Ml[N],unsigned 
 
 int main()
 {
-    // �������� ��������
+    // создание массивов
     unsigned char Mb[N]{0xED};
     unsigned short Ms[N]{0xC0DE};
     unsigned int Ml[N]{0xDEADBEEF};
@@ -196,7 +200,7 @@ int main()
     float Mfs[N]{M_PI};
     double Mfl[N]{M_PI};
 
-    // ������������� ��������
+    // инициализация массивов
     for(int i = 1; i < N; i++)
     {
         Mb[i] = Mb[0];
@@ -207,7 +211,7 @@ int main()
         Mfl[i] = Mfl[0];
     }
 
-    // ���������� ������� 1-5
+    // выполнение заданий 1-5
     puts("Task 1:\n");
     task1(Mb,Ms,Ml,Mq,Mfs,Mfl);
 
