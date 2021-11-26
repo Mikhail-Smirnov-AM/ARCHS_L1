@@ -1,4 +1,4 @@
-// Âàðèàíò 5
+// Вариант 5
 
 #include <iostream>
 #include <iomanip>
